@@ -1,0 +1,21 @@
+{
+  "login": {
+    "title": "Login",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign In",
+    "error": "Invalid email or password"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome, {{name}}!"
+  },
+  "navigation": {
+    "title": "BoroManaja",
+    "logout": "Logout"
+  },
+  "footer": {
+    "copyright": "© 2025 brmnj. All rights reserved.",
+    "version": "Version 1.0.0"
+  }
+}

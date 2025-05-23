@@ -1,0 +1,21 @@
+:root {
+  /* Colors */
+  --color-primary: #81C784;
+  --color-secondary: #FFCCBC;
+  --color-warning: #F0F4C3;
+  --color-text: #000000;
+
+  /* Typography */
+  --font-family: 'Work Sans', sans-serif;
+
+  /* Component specific */
+  --button-text-transform: none;
+  
+  /* Spacing */
+  --spacing-unit: 8px;
+  --spacing-xs: calc(var(--spacing-unit) * 0.5);
+  --spacing-sm: var(--spacing-unit);
+  --spacing-md: calc(var(--spacing-unit) * 2);
+  --spacing-lg: calc(var(--spacing-unit) * 3);
+  --spacing-xl: calc(var(--spacing-unit) * 4);
+}
