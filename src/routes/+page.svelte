@@ -3,9 +3,11 @@
   import { goto } from "$app/navigation";
   import Button from "@smui/button";
   import Card from "@smui/card";
-  import { auth, googleProvider } from "../firebase";
+  import { auth } from "../firebase";
   import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-  import { browser } from "$app/environment";
+  // import { version } from "$app/environment";
+  import pkg from "../../package.json"; // Add this import
+  const appVersion = pkg.version;
 
   let email = "";
   let password = "";
@@ -15,9 +17,13 @@
   async function handleSubmit() {
     isLoading = true;
     error = "";
-    
+
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       if (userCredential.user) {
         await goto("/dashboard");
       }
@@ -29,9 +35,10 @@
     }
   }
 
+  /*
   async function handleGoogleLogin() {
     alert("Google login is under construction");
-/*     isLoading = true;
+    isLoading = true;
     error = "";
     
     try {
@@ -44,8 +51,8 @@
       error = $i18nStore.t("login.error");
     } finally {
       isLoading = false;
-    } */
-  }
+    } 
+  } */
 </script>
 
 <div class="login-container">
@@ -89,6 +96,7 @@
           {$i18nStore.t("login.submit")}
         </Button>
 
+        <!-- 
         <div class="divider">
           <span>or</span>
         </div>
@@ -105,8 +113,11 @@
             class="google-icon"
           />
           Continue with Google
-        </Button>
+        </Button> -->
       </form>
+      <footer class="version-footer">
+        Version {appVersion}
+      </footer>
     </div>
   </Card>
 </div>
@@ -209,69 +220,6 @@
     font-size: 0.875rem;
   }
 
-  .divider {
-    position: relative;
-    text-align: center;
-    margin: var(--spacing-xl) 0;
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      width: calc(50% - 30px);
-      height: 1px;
-      background-color: #ccc;
-    }
-
-    &::before {
-      left: 0;
-    }
-
-    &::after {
-      right: 0;
-    }
-
-    span {
-      background-color: white;
-      padding: 0 var(--spacing-sm);
-      color: #666;
-      font-size: 0.875rem;
-    }
-  }
-
-  :global(.google-button) {
-    width: 100%;
-    background-color: white !important;
-    color: var(--color-text) !important;
-    border: 1px solid #ccc !important;
-    font-weight: 500;
-    height: 48px !important;
-    border-radius: 4px !important;
-    font-size: 1rem !important;
-    letter-spacing: 0.5px;
-    text-transform: none !important;
-    transition: background-color 0.2s ease;
-    box-shadow: none !important;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-sm);
-
-    &:hover:not(:disabled) {
-      background-color: #f5f5f5 !important;
-    }
-
-    &:active:not(:disabled) {
-      background-color: #eee !important;
-    }
-  }
-
-  .google-icon {
-    width: 18px;
-    height: 18px;
-  }
-
   @media (min-width: 768px) {
     :global(.login-card) {
       padding: var(--spacing-xl);
@@ -280,5 +228,12 @@
     .form-field {
       margin-bottom: var(--spacing-lg);
     }
+  }
+  .version-footer {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+    color: var(--color-text);
+    opacity: 0.6;
+    font-size: 0.75rem;
   }
 </style>

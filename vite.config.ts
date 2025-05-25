@@ -37,5 +37,9 @@ export default defineConfig({
                 globPatterns: ['**/*.{js,css,html,png,jpg,svg,ico}'],
             },
         }),
-    ]
+    ],
+    server: {
+        fs: {
+            allow: ['.'],}
+    }
 });
