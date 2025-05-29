@@ -8,7 +8,16 @@
   },
   "dashboard": {
     "title": "Tableau de bord",
-    "welcome": "Bienvenue, {{name}}!"
+    "welcome": "Bienvenue, {{name}}!",
+    "overview": "Vue d'ensemble",
+    "paid": "Payé",
+    "open": "En cours",
+    "totalAmount": "Montant total",
+    "totalLoans": "Nombre total de prêts",
+    "paidAmount": "Montant payé",
+    "paidLoans": "Prêts payés",
+    "outstandingAmount": "Montant à recevoir",
+    "openLoans": "Prêts en cours"
   },
   "navigation": {
     "title": "BoroManaja",
@@ -17,5 +26,10 @@
   "footer": {
     "copyright": "© 2025 brmnj. Tous droits réservés.",
     "version": "Version 1.0.0"
+  },
+  "error": {
+    "notFound": "Page non trouvée",
+    "generic": "Une erreur s'est produite",
+    "backHome": "Retour à l'accueil"
   }
 }

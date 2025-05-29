@@ -8,7 +8,16 @@
   },
   "dashboard": {
     "title": "Dashboard",
-    "welcome": "Welcome, {{name}}!"
+    "welcome": "Welcome, {{name}}!",
+    "overview": "Overview",
+    "paid": "Paid",
+    "open": "Open",
+    "totalAmount": "Total Amount",
+    "totalLoans": "Total Loans",
+    "paidAmount": "Paid Amount",
+    "paidLoans": "Paid Loans",
+    "outstandingAmount": "Outstanding Amount",
+    "openLoans": "Open Loans"
   },
   "navigation": {
     "title": "BoroManaja",
@@ -17,5 +26,10 @@
   "footer": {
     "copyright": "© 2025 brmnj. All rights reserved.",
     "version": "Version 1.0.0"
+  },
+  "error": {
+    "notFound": "Page not found",
+    "generic": "Something went wrong",
+    "backHome": "Back to Home"
   }
 }
