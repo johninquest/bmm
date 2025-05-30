@@ -8,7 +8,7 @@
 
 <div class="open-container">
   <header class="page-header">
-    <h1>Open Loans</h1>
+    <h1>New Loan</h1>
   </header>
 
   <div class="loans-grid">

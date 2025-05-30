@@ -138,6 +138,19 @@
       </Card>
     </div>
   </div>
+
+  <button
+    class="fab"
+    aria-label="Add new loan"
+    on:click={() => {
+      // TODO: Implement add new loan functionality
+      console.log('Add new loan tapped');
+      // alert('Add new loan functionality not implemented yet.'); 
+      goto('/newloan'); // Navigate to new loan page
+    }}
+  >
+    <span class="plus-icon" aria-hidden="true">+</span>
+  </button>
 </div>
 
 <style lang="scss">
@@ -286,6 +299,54 @@
   @media (min-width: 1024px) {
     .dashboard-grid {
       grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    border: none;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    z-index: 1000;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(129, 199, 132, 0.5), 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .plus-icon {
+      line-height: 1;
+      font-weight: 300;
+    }
+  }
+
+  // Add mobile-specific adjustments
+  @media (max-width: 768px) {
+    .fab {
+      bottom: 1.5rem;
+      right: 1.5rem;
     }
   }
 </style>
