@@ -1,7 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { i18nStore } from "../i18n/i18n";
-  import Button from "@smui/button";
   import { goto } from "$app/navigation";
 
   /**
@@ -20,13 +19,12 @@
         ? $i18nStore.t("error.notFound") 
         : $i18nStore.t("error.generic")}
     </p>
-    <Button 
-      class="home-button"
-      variant="raised"
+    <button 
+      class="btn btn-primary w-full mt-6"
       on:click={goHome}
     >
       {$i18nStore.t("error.backHome")}
-    </Button>
+    </button>
   </div>
 </div>
 
@@ -61,15 +59,5 @@
       color: var(--color-text);
       font-size: 1.125rem;
     }
-  }
-
-  /* Use :global() to apply styles to SMUI components if needed, as they might generate their own classes */
-  :global(.home-button) {
-    margin-top: var(--spacing-lg);
-    background-color: var(--color-primary) !important; /* Use !important only if absolutely necessary to override SMUI's styles */
-    color: white !important;
-    font-weight: 500;
-    width: 100%;
-    height: 48px !important;
   }
 </style>
